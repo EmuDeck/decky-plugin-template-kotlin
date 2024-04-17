@@ -44,8 +44,15 @@ yalc.lock
 
 # Ignore output folder
 
-backend/out
+*.py
 
+backend/out
+backend/lib
+backend/.cache/.gradle
+backend/.cache/.konan
+backend/.gradle
+backend/build
+lib/frontend/*
 # Make sure to ignore any instance of the loader's decky_plugin.py
 decky_plugin.py
 
@@ -55,3 +62,5 @@ out/*
 cli/
 cli/*
 cli/decky
+
+deck.json

@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "description": "A template to quickly create decky plugins from scratch, based on TypeScript and webpack",
   "scripts": {
-    "build": "shx rm -rf dist && rollup -c",
+    "build": "shx rm -rf dist && ./update.sh && rollup -c",
+    "dev": "shx rm -rf dist && ./update.sh && RELEASE_TYPE=development rollup -c",
     "watch": "rollup -c -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "decky plugin build",
+    "start": "decky plugin deploy"
   },
   "repository": {
     "type": "git",
@@ -34,11 +37,17 @@
     "@types/webpack": "^5.28.0",
     "rollup": "^2.77.1",
     "rollup-plugin-import-assets": "^1.1.1",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-sourcemap-path-transform": "^1.0.3",
     "shx": "^0.3.4",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/css": "^11.11.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "decky-frontend-lib": "^3.24.5",
     "react-icons": "^4.4.0"
   },
